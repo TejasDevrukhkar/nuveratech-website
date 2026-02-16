@@ -96,7 +96,7 @@ export default function Home() {
               </Link>
 
               <a
-                href="https://wa.me/919209338390"
+                href="https://wa.me/919545375167"
                 target="_blank"
                 className="bg-green-500 px-8 py-3 rounded-full font-semibold hover:scale-105 transition"
               >
