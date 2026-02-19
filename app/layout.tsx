@@ -1,5 +1,7 @@
 import "./globals.css";
 import type { Metadata } from "next";
+import Script from "next/script";
+
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import WhatsAppButton from "../components/WhatsAppButton";
@@ -61,6 +63,22 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
+      <head>
+        {/* Google Analytics */}
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-6XBR6WLT8H"
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-6XBR6WLT8H');
+          `}
+        </Script>
+      </head>
+
       <body className="bg-white text-gray-900 antialiased">
         <Navbar />
         {children}
