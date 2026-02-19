@@ -21,33 +21,26 @@ export default function Navbar() {
 
   return (
     <nav className="fixed top-0 left-0 w-full bg-white/90 backdrop-blur-md border-b border-gray-200 shadow-sm z-50">
-      <div className="max-w-7xl mx-auto px-6 relative">
+      <div className="max-w-7xl mx-auto px-6">
 
         <div className="h-[75px] flex items-center justify-between">
 
-          {/* ================= LOGO + BRAND ================= */}
+          {/* ================= LOGO + BRAND NAME ================= */}
           <Link href="/" className="flex items-center gap-2">
             <Image
               src="/logo6.png"
               alt="NuveraTech"
-              width={50}
-              height={50}
-              className="h-[50px] w-auto object-contain"
+              width={45}
+              height={45}
+              className="h-[45px] w-auto object-contain"
               priority
             />
 
-            {/* Desktop Brand Name */}
-            <span className="hidden md:block text-xl font-bold text-blue-900">
+            {/* Brand name visible on ALL screen sizes */}
+            <span className="text-lg md:text-xl font-bold text-blue-900 tracking-wide">
               NuveraTech
             </span>
           </Link>
-
-          {/* ================= MOBILE CENTER TITLE ================= */}
-          <div className="absolute left-1/2 -translate-x-1/2 md:hidden">
-            <span className="text-lg font-semibold text-blue-900">
-              NuveraTech
-            </span>
-          </div>
 
           {/* ================= DESKTOP MENU ================= */}
           <div className="hidden md:flex items-center gap-10 text-gray-700 font-medium">
@@ -123,6 +116,7 @@ export default function Navbar() {
           >
             {mobileOpen ? <X size={26} /> : <Menu size={26} />}
           </button>
+
         </div>
 
         {/* ================= MOBILE MENU ================= */}
@@ -138,9 +132,7 @@ export default function Navbar() {
               <div className="flex flex-col gap-4 pt-4 text-gray-700 font-medium">
 
                 <button
-                  onClick={() =>
-                    setMobileServiceOpen(!mobileServiceOpen)
-                  }
+                  onClick={() => setMobileServiceOpen(!mobileServiceOpen)}
                   className="flex justify-between items-center"
                 >
                   Services
