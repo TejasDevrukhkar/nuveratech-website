@@ -77,6 +77,19 @@ export default function RootLayout({
             gtag('config', 'G-6XBR6WLT8H');
           `}
         </Script>
+
+        {/* ================= MICROSOFT CLARITY ================= */}
+        <Script id="microsoft-clarity" strategy="afterInteractive">
+          {`
+            (function(c,l,a,r,i,t,y){
+                c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+                t=l.createElement(r);t.async=1;
+                t.src="https://www.clarity.ms/tag/"+i;
+                y=l.getElementsByTagName(r)[0];
+                y.parentNode.insertBefore(t,y);
+            })(window, document, "clarity", "script", "vjpwfuit0q");
+          `}
+        </Script>
       </head>
 
       <body className="bg-white text-gray-900 antialiased">
@@ -84,23 +97,6 @@ export default function RootLayout({
         {children}
         <Footer />
         <WhatsAppButton />
-
-        {/* ================= MICROSOFT CLARITY ================= */}
-        <Script
-          id="microsoft-clarity"
-          strategy="afterInteractive"
-        >
-          {`
-            (function(c,l,a,r,i,t,y){
-                c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-                t=l.createElement(r);t.async=1;
-                t.src="https://www.clarity.ms/tag/YOUR_CLARITY_ID";
-                y=l.getElementsByTagName(r)[0];
-                y.parentNode.insertBefore(t,y);
-            })(window, document, "clarity", "script");
-          `}
-        </Script>
-
       </body>
     </html>
   );
